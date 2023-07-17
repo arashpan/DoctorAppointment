@@ -20,9 +20,13 @@ namespace DoctorAppointment.Controllers
         {
             return View();
         }
-        public IActionResult Save(Clinic clinic)
+        [HttpPost]
+        public IActionResult Save(string name)
         {
-            _context.Clinics.Add(clinic);
+            _context.Clinics.Add(new Clinic()
+            {
+                Name = name
+            });
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
