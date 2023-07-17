@@ -7,6 +7,7 @@ namespace DoctorAppointment.Model
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsDeleted { get; set; }
         public ICollection<Doctor> Doctors { get; } = new List<Doctor>();
         public ICollection<Patient> Patients { get; } = new List<Patient>();
     }
